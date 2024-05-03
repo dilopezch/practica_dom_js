@@ -2,67 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>DOM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>DOM</title>
 </head>
 
 <body>
-    <main class="container-fluid">
-        <h1>Ejercicios del manejo del DOM</h1>
-        <p>Acontinuación se presentan 2 ejercicios del manejo del DOM</p>
+  <main class="container-fluid">
+    <h1>Ejercicios del manejo del DOM</h1>
+    <p>Acontinuación se presentan 2 ejercicios del manejo del DOM</p>
 
-        <div class="container-img">
-            <img src="img/prog.jpg" alt="programando">
+    <div class="container-img">
+      <img src="img/prog.jpg" alt="programando">
+    </div>
+
+    <nav class="menu">
+      <label class="switch">
+        <input type="checkbox" id="calculatorToggle">
+        <span>Calculadora simple</span>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="arrayToggle">
+        <span>Editor de array</span>
+      </label>
+    </nav>
+
+    <section id="sectionCalculator">
+      <h2>Calculadora simple</h2>
+
+      <div class="container-fluid container-numbers">
+        <div class="element-number">
+          <label for="number1" class="form-label">Número 1</label>
+          <input type="number" class="form-control" id="number1" placeholder="0">
         </div>
 
-        <nav class="menu">
-            <label class="switch">
-                <input type="checkbox" id="calculatorToggle">
-                <span>Calculadora simple</span>
-            </label>
-            <label class="switch">
-                <input type="checkbox" id="arrayToggle">
-                <span>Editor de array</span>
-            </label>
-        </nav>
+        <div class="element-number">
+          <label for="number2" class="form-label">Número 2</label>
+          <input type="number" class="form-control" id="number2" placeholder="0">
+        </div>
 
-        <section id="sectionCalculator">
-            <h2>Calculadora simple</h2>
+        <div class="element-number">
+          <p class="result-calculator"> <b>Resultado = <span class="badge text-bg-secondary" id="resultadoCalculadora">
+                N/A </span></b> </p>
+        </div>
+      </div>
 
-            <div class="container-fluid container-numbers">
-                <div class="element-number">
-                    <label for="number1" class="form-label">Número 1</label>
-                    <input type="number" class="form-control" id="number1" placeholder="0">
-                </div>
+      <div class="container-fluid container-buttons">
+        <button type="button" class="btn btn-success" onclick="sumarNumeros()">Sumar</button>
+        <button type="button" class="btn btn-danger" id="botonRestar">Restar</button>
+      </div>
+    </section>
 
-                <div class="element-number">
-                    <label for="number2" class="form-label">Número 2</label>
-                    <input type="number" class="form-control" id="number2" placeholder="0">
-                </div>
+    <section id="sectionArray">
+      <h2>Editor de array</h2>
+      <div class="container-fluid container-array">
+        <div class="element-text">
+          <label for="text">Texto</label>
+          <input type="text" name="text" id="text" class="form-control">
+        </div>
+        <div class="element-array">
+          <h3>Array</h3>
+          <ul id="lista-array">
 
-                <div class="element-number">
-                    <p class="result-calculator"> <b>Resultado = <span class="badge text-bg-secondary"
-                                id="resultadoCalculadora"> N/A </span></b> </p>
-                </div>
-            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid container-buttons">
+        <button type="button" class="btn btn-primary" onclick="agregarAlFinal()">Push</button>
+        <button type="button" class="btn btn-danger" onclick="quitarDelFinal()">Pop</button>
+        <button type="button" class="btn btn-success" onclick="">Unshift</button>
+        <button type="button" class="btn btn-warning" onclick="">Shift</button>
+      </div>
 
-            <div class="container-fluid container-buttons">
-                <button type="button" class="btn btn-success" onclick="sumarNumeros()">Sumar</button>
-                <button type="button" class="btn btn-danger" id="botonRestar">Restar</button>
-            </div>
-        </section>
+    </section>
 
-        <section id="sectionArray">
+    <script src="js/script.js"></script>
 
-        </section>
-
-        <script src="js/script.js"></script>
-
-    </main>
+  </main>
 </body>
 
 </html>

@@ -39,3 +39,35 @@ const restarNumeros = () => {
 const botonRestar = document.getElementById("botonRestar");
 
 botonRestar.addEventListener("click", restarNumeros)
+
+// Array section 
+let arrayTexto = [1, 2, 3];
+
+const lista = document.getElementById("lista-array")
+
+function mostrarArray(array) {
+  lista.innerHTML = "";
+  console.log(array)
+
+  array.forEach(elementoLista => {
+    const li = document.createElement("li"); //crea un nuevo elemento li
+    li.textContent = elementoLista;
+    lista.appendChild(li);
+  });
+}
+
+mostrarArray(arrayTexto);
+
+const agregarAlFinal = () => {
+  const inputText = document.getElementById("text").value;
+
+  if (inputText) {
+    arrayTexto.push(inputText)
+  }
+
+  mostrarArray(arrayTexto)
+}
+
+const quitarDelFinal = () => {
+  arrayTexto.pop();
+}
